@@ -1,26 +1,31 @@
+import Image from "next/image";
+import { HomeContainer, Product } from "../styles/pages/home";
 import { styled } from "../styles/stitches.config";
 
-const Button = styled("button", {
-  backgroundColor: "$green500",
-  padding: 10,
-  borderRadius: 8,
-  borderWidth: 0,
-
-  cursor: "pointer",
-
-  span: {
-    fontWeight: "bold",
-  },
-
-  "&:hover": {
-    filter: "brightness(0.8)",
-  },
-});
+import shirt1 from "../assets/shirts/1.png";
+import shirt2 from "../assets/shirts/2.png";
+import shirt3 from "../assets/shirts/3.png";
 
 export default function Home() {
   return (
-    <Button>
-      Enviar <span>{":)"}</span>
-    </Button>
+    <HomeContainer>
+      <Product>
+        <Image src={shirt1} width={520} height={480} alt="" />
+
+        <footer>
+          <strong>Camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+
+      <Product>
+        <Image src={shirt2} width={520} height={480} alt="" />
+
+        <footer>
+          <strong>Camiseta Y</strong>
+          <span>R$ 69,90</span>
+        </footer>
+      </Product>
+    </HomeContainer>
   );
 }

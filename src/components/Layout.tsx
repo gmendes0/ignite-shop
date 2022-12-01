@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 import logoSVG from "../assets/logo.svg";
-import { Header } from "../styles/pages/app";
+import { Header } from "../styles/components/layout";
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,8 +27,10 @@ export function Layout(props: LayoutProps) {
          *  - Converter o formato da imagem
          *  - Cria imagem menores para dispositivos móveis, já que no mobile nao faz sentido
          *    carregar uma imagem gigante para diminuir depois
+         *
+         * É importante passar uma height e width para que o next redimensione a imagem
+         * para o tamanho que vamos usar.
          */}
-        {/* <img src={logoSVG.src} alt="" /> */}
         <Image src={logoSVG} alt="" />
       </Header>
 
